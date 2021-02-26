@@ -15,7 +15,7 @@ describe(Words) do
       expect(Words.vowel_check("cat")).to(eq(true))
     end
     it('checks that each word in a string contains at least one vowel or y') do
-      expect(Words.vowel_check("my name is j")).to(eq(false))
+      expect(Words.vowel_check("my name is jm")).to(eq(false))
       expect(Words.vowel_check("my name is jo")).to(eq(true))
     end
   end

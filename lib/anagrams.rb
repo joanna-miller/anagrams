@@ -8,11 +8,8 @@ class Words < String
   end 
 
   def self.vowel_check(str)
-    if str.match(/[aeiouy]/)
-      return true
-    else
-      return false
-    end
+    string_array = str.split(" ")
+    string_array.all?(/[aeiouy]/)
   end
 
   def anagram_check()
