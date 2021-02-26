@@ -12,7 +12,7 @@ class Words < String
     string_array.all?(/[aeiouy]/)
   end
 
-  def anagram_check()
+  def input_condenser()
     array = self.words.map() do |str|
       str.downcase().gsub(/\s/, '')
     end

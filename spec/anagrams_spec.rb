@@ -20,14 +20,14 @@ describe(Words) do
     end
   end
 
-  describe('#anagram_check') do
+  describe('#input_condenser') do
     it('makes all user input lower case') do
       user_input = Words.new("JoAnna", "Miller")
-      expect(user_input.anagram_check()).to(eq(["joanna", "miller"]))
+      expect(user_input.input_condenser()).to(eq(["joanna", "miller"]))
     end
     it('condenses user sentences into one word') do
       user_input = Words.new("JoAnna Miller", "is a student at epicodus")
-      expect(user_input.anagram_check()).to(eq(["joannamiller", "isastudentatepicodus"]))
+      expect(user_input.input_condenser()).to(eq(["joannamiller", "isastudentatepicodus"]))
     end
   end
 
