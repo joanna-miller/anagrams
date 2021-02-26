@@ -17,9 +17,9 @@ describe(Words) do
   end
 
   describe('#anagram_check') do
-    it('') do
-      user_input = Words.new("", "")
-      expect(user_input.anagram_check()).to(eq("P"))
+    it('makes all user input lower case') do
+      user_input = Words.new("JoAnna", "Miller")
+      expect(user_input.anagram_check()).to(eq(["joanna", "miller"]))
     end
   end
 
