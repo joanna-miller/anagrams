@@ -32,7 +32,7 @@ class Words
       if vowel_check(element) == false 
         break
       else
-      input_array.push(element.downcase().gsub(/\s/, ''))
+      input_array.push(element.downcase().gsub(/\W/, ''))
       end
     end
     if input_array.length == 2 

@@ -30,6 +30,9 @@ describe(Words) do
     it('can call vowel_check to confirm that all words contain vowels') do
       expect(Words.input_condenser(["JoAnna", "Mllr"])).to(eq("Please enter valid words!"))
     end 
+    it('will remove all punctuation from a word or phrase') do
+      expect(Words.input_condenser(["What're you doing?", "How've you been?"])).to(eq(["whatreyoudoing", "howveyoubeen"]))
+    end  
   end
 
   describe('#anagram_check') do
