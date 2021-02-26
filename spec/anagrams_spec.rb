@@ -59,6 +59,9 @@ describe(Words) do
     it('can determine if two words or phrases have no matching characters') do
       expect(Words.antigram_check(["joanna", "miller"])).to(eq("These words have no matching characters!"))
     end 
+    it('will return no anagram found if no antigram is found') do
+      expect(Words.antigram_check(["jan", "daw"])).to(eq("These words are not anagrams!"))
+    end 
   end
 
 end

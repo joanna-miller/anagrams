@@ -52,17 +52,21 @@ class Words
   end
 
   def self.antigram_check(array)
+    result = true
     word1 = array[0]
     word2 = array[1]
     word1.each_char do |char1|
       word2.each_char do |char2|
         if char1 == char2 
-          "These words are not anagrams!"
-          break
+          result = false
         end
       end
     end
-    "These words have no matching characters!"
+    if result == false
+      "These words are not anagrams!"
+    else
+      "These words have no matching characters!"
+    end
   end
 
 end
