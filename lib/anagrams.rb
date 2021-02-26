@@ -1,4 +1,7 @@
-class Words < String
+#!/usr/bin/ruby
+require('pry')
+
+class Words < Array
   def initialize(str1, str2)
     @words = [str1, str2]
   end
@@ -9,23 +12,33 @@ class Words < String
 
   def self.vowel_check(str)
     string_array = str.split(" ")
-    string_array.all?(/[aeiouy]/)
+    if string_array.all?(/[aeiouy]/)
+      return true
+    else
+      return false
+    end
   end
 
   def self.input_condenser(array)
-    
-    input_array = array.words.map() do |str|
-      str.downcase().gsub(/\s/, '')
+    input_array = []
+    array.words.each() do |element|
+      vowel_check(element)
+      if false 
+        break
+      else
+      input_array.push(element)
+      end
     end
-    # array.each() do |element|
-    #   Words.vowel_check(element)
-    #   if false
-    #     return "Please input valid words!"
-    #     break
-    #   end
-    # end
+    input_array
+
+    if input_array.length == 2 
+      word_array = input_array.map() do |str|
+        str.downcase().gsub(/\s/, '')
+      end
+      return word_array
+    else
+      return "Please enter valid words!"
+    end
   end
-
-
 
 end
