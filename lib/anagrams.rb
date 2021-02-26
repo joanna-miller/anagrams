@@ -6,4 +6,9 @@ class Words
   def receiver
     @words
   end 
+
+  def anagram_check()
+
+  end
+
 end
