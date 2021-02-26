@@ -4,17 +4,25 @@ class Words
   def initialize(str1, str2)
     @words = [str1, str2]
   end
-
+  
   def words
     @words
   end 
-
-  def self.vowel_check(str)
-    string_array = str.split(" ")
-    if string_array.all?(/[aeiouy]/)
-      true
-    else
-      false
+  
+  def anagram_check
+    user_input = words
+    condensed_input = Words.input_condenser(user_input)
+    if condensed_input.class() == Array
+      sorted_input = condensed_input.map() do |str|
+        str.chars.sort.join 
+      end
+      if sorted_input[0] == sorted_input[1]
+        "These words are anagrams!"
+      else 
+        Words.antigram_check(sorted_input)
+      end 
+    else 
+      condensed_input
     end
   end
 
@@ -34,20 +42,12 @@ class Words
     end
   end
 
-  def anagram_check
-    user_input = words
-    condensed_input = Words.input_condenser(user_input)
-    if condensed_input.class() != Array
-      return condensed_input
-    else 
-      sorted_input = condensed_input.map() do |str|
-        str.chars.sort.join 
-      end
-      if sorted_input[0] == sorted_input[1]
-        "These words are anagrams!"
-      else 
-        not_anagram = Words.antigram_check(sorted_input)
-      end
+  def self.vowel_check(str)
+    string_array = str.split(" ")
+    if string_array.all?(/[aeiouy]/)
+      true
+    else
+      false
     end
   end
 
