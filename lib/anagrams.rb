@@ -46,7 +46,7 @@ class Words
       if sorted_input[0] == sorted_input[1]
         "These words are anagrams!"
       else 
-        "These words are not anagrams!" #replace this line later with antigram_check
+        not_anagram = Words.antigram_check(sorted_input)
       end
     end
   end

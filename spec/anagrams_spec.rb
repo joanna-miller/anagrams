@@ -53,6 +53,10 @@ describe(Words) do
       user_input = Words.new("School master", "The classroom")
       expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
     end 
+    it('can call antigram_check to check if words are antigrams') do
+      user_input = Words.new("hi", "bye")
+      expect(user_input.anagram_check()).to(eq("These words have no matching characters!"))
+    end 
   end
 
   describe('Words#antigram_check') do
@@ -60,7 +64,7 @@ describe(Words) do
       expect(Words.antigram_check(["joanna", "miller"])).to(eq("These words have no matching characters!"))
     end 
     it('will return no anagram found if no antigram is found') do
-      expect(Words.antigram_check(["jan", "daw"])).to(eq("These words are not anagrams!"))
+      expect(Words.antigram_check(["jan", "dawn"])).to(eq("These words are not anagrams!"))
     end 
   end
 
