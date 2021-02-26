@@ -22,16 +22,13 @@ describe(Words) do
 
   describe('Words#input_condenser') do
     it('makes all user input lower case') do
-      user_input = Words.new("JoAnna", "Miller")
-      expect(Words.input_condenser(user_input)).to(eq(["joanna", "miller"]))
+      expect(Words.input_condenser(["JoAnna", "Miller"])).to(eq(["joanna", "miller"]))
     end
     it('condenses user sentences into one word') do
-      user_input = Words.new("JoAnna Miller", "is a student at epicodus")
-      expect(Words.input_condenser(user_input)).to(eq(["joannamiller", "isastudentatepicodus"]))
+      expect(Words.input_condenser(["JoAnna Miller", "is a student at epicodus"])).to(eq(["joannamiller", "isastudentatepicodus"]))
     end
     it('can call vowel_check to confirm that all words contain vowels') do
-      user_input = Words.new("JoAnna", "Mllr")
-      expect(Words.input_condenser(user_input)).to(eq("Please enter valid words!"))
+      expect(Words.input_condenser(["JoAnna", "Mllr"])).to(eq("Please enter valid words!"))
     end 
   end
 

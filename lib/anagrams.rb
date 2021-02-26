@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 require('pry')
 
-class Words < Array
+class Words
   def initialize(str1, str2)
     @words = [str1, str2]
   end
@@ -21,7 +21,7 @@ class Words < Array
 
   def self.input_condenser(array)
     input_array = []
-    array.words.each() do |element|
+    array.each() do |element|
       if vowel_check(element) == false 
         break
       else
@@ -37,6 +37,7 @@ class Words < Array
 
   def anagram_check
     user_input = words
+    #condensed_input = input_condenser(user_input)
     sorted_input = user_input.map() do |str|
       str.chars.sort.join 
     end
