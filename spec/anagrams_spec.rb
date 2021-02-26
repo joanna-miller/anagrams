@@ -41,8 +41,8 @@ describe(Words) do
     user_input = Words.new("stressed", "desserts")
     expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
   end
-  # it('can identify a multi word anagram') do
-  #   user_input = Words.new("a gentle man", "elegant man")
-  #   expect(input.anagram_check(input)).to(eq("These words are anagrams!"))
-  # end
+  it('can identify a multi word anagram') do
+    user_input = Words.new("a gentle man", "elegant man")
+    expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
+  end
 end

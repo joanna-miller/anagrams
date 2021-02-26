@@ -37,8 +37,8 @@ class Words
 
   def anagram_check
     user_input = words
-    #condensed_input = input_condenser(user_input)
-    sorted_input = user_input.map() do |str|
+    condensed_input = Words.input_condenser(user_input)
+    sorted_input = condensed_input.map() do |str|
       str.chars.sort.join 
     end
     if sorted_input[0] == sorted_input[1]
