@@ -13,9 +13,9 @@ class Words < Array
   def self.vowel_check(str)
     string_array = str.split(" ")
     if string_array.all?(/[aeiouy]/)
-      return true
+      true
     else
-      return false
+      false
     end
   end
 
@@ -29,9 +29,9 @@ class Words < Array
       end
     end
     if input_array.length == 2 
-      return input_array
+      input_array
     else
-      return "Please enter valid words!"
+      "Please enter valid words!"
     end
   end
 
