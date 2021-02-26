@@ -4,6 +4,6 @@ class Words
   end
 
   def receiver
-
+    @words
   end 
 end
