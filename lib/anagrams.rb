@@ -16,7 +16,10 @@ class Words < String
   end
 
   def anagram_check()
-
+    array = self.words.map() do |str|
+      str.downcase()
+    end
+    array
   end
 
 end
