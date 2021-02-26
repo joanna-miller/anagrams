@@ -41,7 +41,9 @@ class Words < Array
       str.chars.sort.join 
     end
     if sorted_input[0] == sorted_input[1]
-      return "These words are anagrams!"
+      "These words are anagrams!"
+    else 
+      "These words are not anagrams!"
     end
   end
 

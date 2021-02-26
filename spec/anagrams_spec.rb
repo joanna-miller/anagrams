@@ -39,7 +39,7 @@ describe(Words) do
   describe('#anagram_check')
   it('returns negative if two single word strings are not anagrams') do
     user_input = Words.new("joanna", "miller")
-    expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
+    expect(user_input.anagram_check()).to(eq("These words are not anagrams!"))
   end
   it('returns positive if two single word strings are anagrams') do
     user_input = Words.new("stressed", "desserts")
