@@ -53,10 +53,8 @@ class Words
 
   def self.antigram_check(array)
     result = true
-    word1 = array[0]
-    word2 = array[1]
-    word1.each_char do |char1|
-      word2.each_char do |char2|
+    array[0].each_char do |char1|
+      array[1].each_char do |char2|
         if char1 == char2 
           result = false
         end
