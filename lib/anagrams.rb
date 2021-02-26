@@ -46,13 +46,23 @@ class Words
       if sorted_input[0] == sorted_input[1]
         "These words are anagrams!"
       else 
-        "These words are not anagrams!"
+        "These words are not anagrams!" #replace this line later with antigram_check
       end
     end
   end
 
-  def self.antigram_check()
-
+  def self.antigram_check(array)
+    word1 = array[0]
+    word2 = array[1]
+    word1.each_char do |char1|
+      word2.each_char do |char2|
+        if char1 == char2 
+          "These words are not anagrams!"
+          break
+        end
+      end
+    end
+    "These words have no matching characters!"
   end
-  
+
 end
