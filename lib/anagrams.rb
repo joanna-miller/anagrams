@@ -36,7 +36,13 @@ class Words < Array
   end
 
   def anagram_check
-    
+    user_input = words
+    sorted_input = user_input.map() do |str|
+      str.chars.sort.join 
+    end
+    if sorted_input[0] == sorted_input[1]
+      return "These words are anagrams!"
+    end
   end
 
 end
