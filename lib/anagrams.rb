@@ -1,4 +1,3 @@
-#!/usr/bin/ruby
 require('pry')
 
 class Words
@@ -38,13 +37,17 @@ class Words
   def anagram_check
     user_input = words
     condensed_input = Words.input_condenser(user_input)
-    sorted_input = condensed_input.map() do |str|
-      str.chars.sort.join 
-    end
-    if sorted_input[0] == sorted_input[1]
-      "These words are anagrams!"
+    if condensed_input.class() != Array
+      return condensed_input
     else 
-      "These words are not anagrams!"
+      sorted_input = condensed_input.map() do |str|
+        str.chars.sort.join 
+      end
+      if sorted_input[0] == sorted_input[1]
+        "These words are anagrams!"
+      else 
+        "These words are not anagrams!"
+      end
     end
   end
 

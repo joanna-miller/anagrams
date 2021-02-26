@@ -32,17 +32,24 @@ describe(Words) do
     end 
   end
 
-  describe('#anagram_check')
-  it('returns negative if two single word strings are not anagrams') do
-    user_input = Words.new("joanna", "miller")
-    expect(user_input.anagram_check()).to(eq("These words are not anagrams!"))
+  describe('#anagram_check') do
+    it('returns negative if two single word strings are not anagrams') do
+      user_input = Words.new("joanna", "miller")
+      expect(user_input.anagram_check()).to(eq("These words are not anagrams!"))
+    end
+    it('returns positive if two single word strings are anagrams') do
+      user_input = Words.new("stressed", "desserts")
+      expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
+    end
+    it('can identify a multi word anagram') do
+      user_input = Words.new("a gentle man", "elegant man")
+      expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
+    end
+    it('can confirm that all words contain vowels') do
+      user_input = Words.new("JoAnna", "Mllr")
+      expect(user_input.anagram_check()).to(eq("Please enter valid words!"))
+    end 
+    
   end
-  it('returns positive if two single word strings are anagrams') do
-    user_input = Words.new("stressed", "desserts")
-    expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
-  end
-  it('can identify a multi word anagram') do
-    user_input = Words.new("a gentle man", "elegant man")
-    expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
-  end
+
 end
