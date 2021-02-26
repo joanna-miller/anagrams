@@ -55,4 +55,10 @@ describe(Words) do
     end 
   end
 
+  describe('Words#antigram_check') do
+    it('can determine if two words or phrases have no matching characters') do
+      expect(Words.antigram_check(["joanna", "miller"])).to(eq("These words have no matching characters!"))
+    end 
+  end
+
 end
