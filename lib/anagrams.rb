@@ -25,14 +25,11 @@ class Words < Array
       if vowel_check(element) == false 
         break
       else
-      input_array.push(element)
+      input_array.push(element.downcase().gsub(/\s/, ''))
       end
     end
     if input_array.length == 2 
-      word_array = input_array.map() do |str|
-        str.downcase().gsub(/\s/, '')
-      end
-      return word_array
+      return input_array
     else
       return "Please enter valid words!"
     end
