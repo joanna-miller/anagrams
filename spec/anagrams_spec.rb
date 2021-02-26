@@ -21,6 +21,10 @@ describe(Words) do
       user_input = Words.new("JoAnna", "Miller")
       expect(user_input.anagram_check()).to(eq(["joanna", "miller"]))
     end
+    it('condenses user sentences into one word') do
+      user_input = Words.new("JoAnna Miller", "is a student at epicodus")
+      expect(user_input.anagram_check()).to(eq(["joannamiller", "isastudentatepicodus"]))
+    end
   end
 
 end
