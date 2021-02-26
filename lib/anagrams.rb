@@ -51,4 +51,8 @@ class Words
     end
   end
 
+  def self.antigram_check()
+
+  end
+  
 end

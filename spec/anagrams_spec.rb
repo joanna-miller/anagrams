@@ -34,7 +34,7 @@ describe(Words) do
 
   describe('#anagram_check') do
     it('returns negative if two single word strings are not anagrams') do
-      user_input = Words.new("joanna", "miller")
+      user_input = Words.new("joanna", "dawn")
       expect(user_input.anagram_check()).to(eq("These words are not anagrams!"))
     end
     it('returns positive if two single word strings are anagrams') do
@@ -49,7 +49,10 @@ describe(Words) do
       user_input = Words.new("JoAnna", "Mllr")
       expect(user_input.anagram_check()).to(eq("Please enter valid words!"))
     end 
-    
+    it('can determine an anagram with case insensitivity') do
+      user_input = Words.new("School master", "The classroom")
+      expect(user_input.anagram_check()).to(eq("These words are anagrams!"))
+    end 
   end
 
 end
