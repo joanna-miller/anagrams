@@ -22,15 +22,12 @@ class Words < Array
   def self.input_condenser(array)
     input_array = []
     array.words.each() do |element|
-      vowel_check(element)
-      if false 
+      if vowel_check(element) == false 
         break
       else
       input_array.push(element)
       end
     end
-    input_array
-
     if input_array.length == 2 
       word_array = input_array.map() do |str|
         str.downcase().gsub(/\s/, '')
