@@ -12,11 +12,20 @@ class Words < String
     string_array.all?(/[aeiouy]/)
   end
 
-  def input_condenser()
-    array = self.words.map() do |str|
+  def self.input_condenser(array)
+    
+    input_array = array.words.map() do |str|
       str.downcase().gsub(/\s/, '')
     end
-    array
+    # array.each() do |element|
+    #   Words.vowel_check(element)
+    #   if false
+    #     return "Please input valid words!"
+    #     break
+    #   end
+    # end
   end
+
+
 
 end

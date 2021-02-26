@@ -9,7 +9,7 @@ describe(Words) do
     end
   end
 
-  describe('#vowel_check') do
+  describe('Words#vowel_check') do
     it('checks that a string contains at least one vowel or y') do
       expect(Words.vowel_check("jnn")).to(eq(false))
       expect(Words.vowel_check("cat")).to(eq(true))
@@ -20,15 +20,25 @@ describe(Words) do
     end
   end
 
-  describe('#input_condenser') do
+  describe('Words#input_condenser') do
     it('makes all user input lower case') do
       user_input = Words.new("JoAnna", "Miller")
-      expect(user_input.input_condenser()).to(eq(["joanna", "miller"]))
+      expect(Words.input_condenser(user_input)).to(eq(["joanna", "miller"]))
     end
     it('condenses user sentences into one word') do
       user_input = Words.new("JoAnna Miller", "is a student at epicodus")
-      expect(user_input.input_condenser()).to(eq(["joannamiller", "isastudentatepicodus"]))
+      expect(Words.input_condenser(user_input)).to(eq(["joannamiller", "isastudentatepicodus"]))
     end
+    it('can call vowel_check to confirm that all words contain vowels') do
+      user_input = Words.new("JoAnna", "Mllr")
+      expect(Words.input_condenser(user_input)).to(eq("Please enter valid words!"))
+    end 
+
   end
 
+  # describe('#anagram_check')
+  #   it('checks to see if a two single word strings are anagrams') do
+  #     user_input = Words.new("stressed", "desserts")
+  #     expect(user_input.anagram_check()).to(eq(true))
+  #   end
 end
