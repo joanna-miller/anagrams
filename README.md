@@ -26,10 +26,16 @@ _This is an independent project for Epicodus to practice my skills learned durin
 * _Navigate to top level of the directory with command `cd anagrams`_
 * _To install bundler for managing gems run command `gem install bundler`_
 * _To install gems into the project run command `bundle install`_
-* _Open project with command `code .`_ 
+* _To use Visual Studio Code to edit this project, follow install instructions [here](https://code.visualstudio.com/)._
+* _To enable command `code`, open VS Code, click on View > Command Palette, type in "shell command", and click on "Shell Command: Install 'code' command in PATH"_
+* _Now, from your terminal, in the project's top level directory, you can run command `code .` to open project in VS Code._ 
 * _To run tests using rspec, run command `rspec`_
 
 ---
+
+## Known Bugs
+
+* _Program considers any collection of letters that includes a vowel or 'y' a word_
 
 ## License
 
@@ -39,4 +45,8 @@ _This is an independent project for Epicodus to practice my skills learned durin
 
 ## Contact Information
 
-_Jo Miller: joannadawnmiller@gmail.com_
+### Jo Miller 
+
+* _[Email](mailto:joannadawnmiller@gmail.com)_
+* _[Github](https://github.com/joanna-miller)_
+* _[LinkedIn](https://www.linkedin.com/in/jomillerde/)_
