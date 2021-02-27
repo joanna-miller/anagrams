@@ -1,5 +1,6 @@
-require 'rspec'
-require 'anagrams'
+require ('rspec')
+require ('pry')
+require ('anagrams')
 
 describe(Words) do
   describe('#words') do
