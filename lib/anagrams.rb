@@ -14,11 +14,7 @@ class Words
       sorted_input = condensed_input.map() do |str|
         str.chars.sort.join 
       end
-      if sorted_input[0] == sorted_input[1]
-        "These words are anagrams!"
-      else 
-        Words.antigram_check(sorted_input)
-      end 
+      sorted_input[0] == sorted_input[1] ? "These words are anagrams!" : Words.antigram_check(sorted_input)
     else 
       condensed_input
     end
@@ -27,26 +23,14 @@ class Words
   def self.input_condenser(array)
     input_array = []
     array.each() do |element|
-      if vowel_check(element) == false 
-        break
-      else
-      input_array.push(element.downcase().gsub(/\W/, ''))
-      end
+      vowel_check(element) == false ? break : input_array.push(element.downcase().gsub(/\W/, ''))
     end
-    if input_array.length == 2 
-      input_array
-    else
-      "Please enter valid words!"
-    end
+      input_array.length == 2 ? input_array : "Please enter valid words!"
   end
 
   def self.vowel_check(str)
     string_array = str.split(" ")
-    if string_array.all?(/[aeiouy]/)
-      true
-    else
-      false
-    end
+    string_array.all?(/[aeiouy]/) ? true : false
   end
 
   def self.antigram_check(array)
@@ -58,11 +42,7 @@ class Words
         end
       end
     end
-    if result == false
-      "These words are not anagrams!"
-    else
-      "These words have no matching characters!"
-    end
+    result == false ? "These words are not anagrams!" : "These words have no matching characters!"
   end
 
 end
